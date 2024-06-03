@@ -13,35 +13,7 @@ from random import randint
 app = FastAPI()
 
 
-# @app.get('/')
-# def root():
-#     return {'Message': "Final Task"}
-#
-#
-# @app.get('/fake_users/{count}')
-# async def create_users(count: int):
-#     for i in range(count):
-#         query = db.users.insert().values(name=f'users{i}', surname=f'surname{i}',
-#                                          email=f'email{i}@yandex.ru', password=f'qwerty{i}')
-#         await db.database.execute(query)
-#     return {'message': f'{count} fake users create'}
-#
-#
-# @app.get('fake_products/{count}')
-# async def create_products(count: int):
-#     for i in range(count):
-#         query = db.users.insert().values(title=f'product {i}', description=f'about product{i}', price=randint(1, 10000))
-#         await db.database.execute(query)
-#     return {'message': f'{count} fake products create'}
-#
-#
-# @app.get("/fake_orders/{count}")
-# async def create_orders(count: int):
-#     for i in range(count):
-#         query = db.orders.insert().values(user_id=randint(1, 20), prod_id=randint(1, 20), status="created",
-#                                           date=datetime.datetime.now())
-#         await db.database.execute(query)
-#     return {'message': f'{count} fake orders create'}
+
 
 
 @app.get("/users/", response_model=List[models.UserRead])
